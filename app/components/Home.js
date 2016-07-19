@@ -19,7 +19,7 @@ export const LoginForm = () => {
         <div className="text-center">
           <ul className="list-inline">
             <li>
-              <button type="submit" className="btn btn-default">ตั้งค่า</button>
+              <Link className="btn btn-default" to="config">ตั้งค่า</Link>
             </li>
             <li>
               <button type="submit" className="btn btn-primary">เข้าสู่ระบบ</button>
