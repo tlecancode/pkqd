@@ -100,7 +100,9 @@
   "dependencies": {
     "css-modules-require-hook": "^4.0.0",
     "electron-debug": "^1.0.1",
+    "electron-settings": "^1.1.1",
     "font-awesome": "^4.6.3",
+    "mysql": "github:mysqljs/mysql",
     "postcss": "^5.0.21",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",

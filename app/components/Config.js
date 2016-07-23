@@ -7,8 +7,13 @@ export const ConfigForm = () => {
       <form action="" className="">
         <div className="form-group">
           <label htmlFor="db_ip">Database IP</label>
-          <input type="text" className="form-control input-lg" id="ip" name="ip"
+          <input type="text" className="form-control input-lg" id="db_ip" name="db_ip"
                  placeholder="Database IP (ex. 192.168.1.13)"/>
+        </div>
+        <div className="form-group">
+          <label htmlFor="db_port">Database Port</label>
+          <input type="text" className="form-control input-lg" id="db_port" name="db_port"
+                 placeholder="Database Port"/>
         </div>
         <div className="form-group">
           <label htmlFor="db_user">Database User</label>
@@ -49,7 +54,7 @@ export default class Config extends Component {
       <div className="container">
         <div className='row'>
           <div className="col-xs-12">
-            <h2 className="display-1 text-center" style={{margin: '200px 0 20px 0'}}>ตั้งค่า</h2>
+            <h2 className="display-1 text-center" style={{margin: '60px 0 20px 0'}}>ตั้งค่า</h2>
           </div>
           <ConfigForm/>
         </div>
