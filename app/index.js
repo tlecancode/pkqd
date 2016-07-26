@@ -8,6 +8,9 @@ import configureStore from './store/configureStore';
 import './app.global.css';
 
 const store = configureStore();
+import {getConfig} from './actions/config'
+store.dispatch(getConfig())
+
 const history = syncHistoryWithStore(hashHistory, store);
 
 render(

@@ -47,12 +47,12 @@ export function setConfig(config) {
 
 export function testConfig() {
   return (dispatch, getState) => {
-    const config = getState().config
+    const config = getState().form.config
     const connection = mysql.createConnection({
-      host: config.db_ip,
-      user: config.db_user,
-      password: config.db_pwd,
-      database: config.db_name
+      host: config.db_ip.value,
+      user: config.db_user.value,
+      password: config.db_pwd.value,
+      database: config.db_name.value
     });
     connection.connect((err) => {
       if (err) {

@@ -60,7 +60,6 @@ export const ConfigForm = reduxForm({
   fields
 }, (state) => {
   const config = settings.get()
-  console.log(config)
   return {
     initialValues: {
       db_ip: config.config__db_ip,
