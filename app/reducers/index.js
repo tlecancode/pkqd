@@ -1,10 +1,14 @@
-import { combineReducers } from 'redux';
-import { routerReducer as routing } from 'react-router-redux';
-import counter from './counter';
+import { combineReducers } from 'redux'
+import { routerReducer as routing } from 'react-router-redux'
+import {reducer as formReducer} from 'redux-form'
+import counter from './counter'
+import config from './config'
 
 const rootReducer = combineReducers({
   counter,
-  routing
-});
+  config,
+  routing,
+  form: formReducer
+})
 
-export default rootReducer;
+export default rootReducer

@@ -1,11 +1,20 @@
-import { INCREMENT_COUNTER, DECREMENT_COUNTER } from '../actions/counter';
+import {
+  SET_CONFIG
+} from '../actions/config';
 
-export default function counter(state = 0, action) {
+export default function config(state = {
+  db_ip: undefined,
+  db_port: undefined,
+  db_user: undefined,
+  db_pwd: undefined,
+  db_name: undefined
+}, action) {
   switch (action.type) {
-    case INCREMENT_COUNTER:
-      return state + 1;
-    case DECREMENT_COUNTER:
-      return state - 1;
+    case SET_CONFIG:
+      return {
+        ...state,
+        ...action.payload
+      };
     default:
       return state;
   }
