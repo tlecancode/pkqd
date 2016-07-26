@@ -1,10 +1,17 @@
-import React, { Component } from 'react';
 import Home from '../components/Home';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import Config from '../components/Config';
+import * as ConfigActions from '../actions/config';
 
-export default class HomePage extends Component {
-  render() {
-    return (
-      <Home />
-    );
-  }
+function mapStateToProps(state) {
+  return {
+    config: state.config
+  };
 }
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(ConfigActions, dispatch);
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
