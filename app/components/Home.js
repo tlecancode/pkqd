@@ -20,7 +20,6 @@ export const LoginForm = ({config}) => {
           </pre>
         </div>
         <div className="form-group">
-          <label htmlFor="dep_id">รหัสเครื่อง</label>
           <input type="text" className="form-control input-lg" id="dep_id" name="dep_id" placeholder="รหัสเครื่อง"/>
         </div>
         <div className="text-center">
