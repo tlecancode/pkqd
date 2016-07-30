@@ -1,3 +1,28 @@
-.q-page {
+.qPage {
   display: flex;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+}
+
+.qHeader {
+  padding: 20px;
+  flex: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.qHeader h1, .qHeader h2 {
+  margin: 0;
+}
+
+.qHeader h1 {
+  font-size: 100px;
+  font-weight: bold;
+}
+
+.qBody {
+  background: #ECF0F1;
+  flex: 75%;
 }

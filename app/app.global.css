@@ -5229,3 +5229,7 @@ body {
 .display-1 {
   font-size: 5rem;
 }
+
+body div#root, body > div#root > div {
+  height: 100%;
+}

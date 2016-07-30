@@ -62,10 +62,10 @@ export function testConfig() {
     connection.connect((err) => {
       if (err) {
         alert(err)
-        console.error(err)
-        return
+      } else {
+        alert('เชื่อมต่อสำเร็จ')
       }
-      alert('เชื่อมต่อสำเร็จ')
+      connection.end()
       return dispatch({
         type: TEST_CONFIG
       })

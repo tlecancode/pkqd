@@ -107,6 +107,7 @@
     "react": "^15.1.0",
     "react-color": "^2.2.2",
     "react-dom": "^15.1.0",
+    "react-fittext": "0.0.7",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
     "react-router-redux": "^4.0.4",

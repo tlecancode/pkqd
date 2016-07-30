@@ -1,7 +1,7 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import Q from '../components/Q';
-import * as ConfigActions from '../actions/config';
+import * as QActions from '../actions/q';
 
 function mapStateToProps(state) {
   return {
@@ -10,7 +10,7 @@ function mapStateToProps(state) {
 }
 
 function mapDispatchToProps(dispatch) {
-  return bindActionCreators(ConfigActions, dispatch);
+  return bindActionCreators(QActions, dispatch);
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(Q);
