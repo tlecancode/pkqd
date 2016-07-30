@@ -15,17 +15,16 @@ export const LoginForm = ({config}) => {
               <li><strong>DB Name: </strong>{config.db_name}</li>
               <li><strong>Username: </strong>{config.db_user}</li>
               <li><strong>Password: </strong>{config.db_pwd.length ? '******': 'No'}</li>
+              <li><strong>รหัสเครื่อง: </strong>{config.dep_id}</li>
+              <li><strong>พื้นหลัง: </strong> <span style={{backgroundColor: config.bg_color, color: '#fff'}}>{config.bg_color}</span></li>
               <li><Link to="config">ตั้งค่า</Link></li>
             </ul>
           </pre>
         </div>
-        <div className="form-group">
-          <input type="text" className="form-control input-lg" id="dep_id" name="dep_id" placeholder="รหัสเครื่อง"/>
-        </div>
         <div className="text-center">
           <ul className="list-inline">
             <li>
-              <button type="submit" className="btn btn-primary">เข้าสู่ระบบ</button>
+              <Link to="q" className="btn btn-primary">เข้าสู่ระบบ</Link>
             </li>
           </ul>
         </div>

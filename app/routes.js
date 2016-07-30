@@ -4,11 +4,13 @@ import App from './containers/App';
 import HomePage from './containers/HomePage';
 import ConfigPage from './containers/ConfigPage';
 import CounterPage from './containers/CounterPage';
+import QPage from './containers/QPage';
 
 
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage} />
     <Route path="/config" component={ConfigPage} />
+    <Route path="/q" component={QPage} />
   </Route>
 );

@@ -16,7 +16,9 @@ export function getConfig() {
       db_port: config.config__db_port,
       db_user: config.config__db_user,
       db_pwd: config.config__db_pwd,
-      db_name: config.config__db_name
+      db_name: config.config__db_name,
+      dep_id: config.config__dep_id,
+      bg_color: config.config__bg_color
     }))
   }
 }
@@ -29,7 +31,10 @@ export function saveConfig() {
     settings.set('config__db_user', config.db_user.value)
     settings.set('config__db_pwd', config.db_pwd.value)
     settings.set('config__db_name', config.db_name.value)
+    settings.set('config__dep_id', config.dep_id.value)
+    settings.set('config__bg_color', config.bg_color.value)
     alert('บันทึกสำเร็จ')
+    dispatch(getConfig())
     return dispatch({
       type: SAVE_CONFIG
     })

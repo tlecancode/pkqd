@@ -7,14 +7,16 @@ export default function config(state = {
   db_port: undefined,
   db_user: undefined,
   db_pwd: undefined,
-  db_name: undefined
+  db_name: undefined,
+  dep_id: undefined,
+  bg_color: undefined
 }, action) {
   switch (action.type) {
     case SET_CONFIG:
       return {
         ...state,
         ...action.payload
-      };
+      }
     default:
       return state;
   }

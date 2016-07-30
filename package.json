@@ -105,6 +105,7 @@
     "mysql": "github:mysqljs/mysql",
     "postcss": "^5.0.21",
     "react": "^15.1.0",
+    "react-color": "^2.2.2",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.4.1",
