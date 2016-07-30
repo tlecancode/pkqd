@@ -10,7 +10,7 @@ export default class Q extends React.Component {
 
   render() {
     const bgColor = this.props.config.bg_color || '#2c3e50'
-    const {config: {department, name, entryposition}} = this.props
+    const {q: {department, name, entryposition}} = this.props
     return (
       <div className={styles.qPage}>
         <div style={{backgroundColor: bgColor}} className={styles.qHeader}>

@@ -5,7 +5,8 @@ import * as QActions from '../actions/q';
 
 function mapStateToProps(state) {
   return {
-    config: state.config
+    config: state.config,
+    q: state.q
   };
 }
 
