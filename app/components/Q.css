@@ -26,3 +26,41 @@
   background: #ECF0F1;
   flex: 3;
 }
+
+.qList {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 40px;
+  height: 100%;
+}
+
+.qItem {
+  display: flex;
+  -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
+  -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
+  background: #fff;
+  align-items: stretch;
+}
+
+.qNumber {
+  padding: 0 20px;
+  font-size: 70px;
+  color: #fff;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+}
+
+.qNameContainer {
+  padding: 0 30px;
+  font-size: 70px;
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.qName {
+  flex: 1;
+}

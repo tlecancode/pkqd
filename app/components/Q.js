@@ -13,17 +13,21 @@ export default class Q extends React.Component {
     const {q: {department, name, entryposition}} = this.props
     return (
       <div className={styles.qPage}>
-        <div style={{backgroundColor: bgColor}} className={styles.qHeader}>
-          <DepartmentName department={department}/>
-          <UserName name={name}/>
-          <Position position={entryposition}/>
-        </div>
-        <div className={styles.qBody}>
-          List
-        </div>
+        <QHeader bgColor={bgColor} department={department} name={name} entryposition={entryposition}/>
+        <QBody bgColor={bgColor}/>
       </div>
     )
   }
+}
+
+export const QHeader = ({department, name, entryposition, bgColor}) => {
+  return (
+    <div style={{backgroundColor: bgColor}} className={styles.qHeader}>
+      <DepartmentName department={department}/>
+      <UserName name={name}/>
+      <Position position={entryposition}/>
+    </div>
+  )
 }
 
 export const DepartmentName = ({department}) => {
@@ -57,4 +61,31 @@ export const Position = ({position}) => {
     )
   }
   return <div></div>
+}
+
+export const QBody = ({q, bgColor}) => {
+  return (
+    <div className={styles.qBody}>
+      <div className={styles.qList}>
+        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
+        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
+        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
+        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
+        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
+      </div>
+    </div>
+  )
+}
+
+export const QItem = ({qNumber, qName, bgColor}) => {
+  return (
+    <div className={styles.qItem} style={{color: bgColor}}>
+      <div style={{backgroundColor: bgColor}} className={styles.qNumber}>{qNumber}</div>
+      <div className={styles.qNameContainer}>
+        <ReactFitText compressor={1} maxFontSize={60}>
+          <h4 className={styles.qName}>{qName}</h4>
+        </ReactFitText>
+      </div>
+    </div>
+  )
 }

@@ -5,7 +5,8 @@ import {
 export default function q(state = {
   department: undefined,
   name: undefined,
-  entryposition: undefined
+  entryposition: undefined,
+  q: []
 }, action) {
   switch (action.type) {
     case GET_DEPARTMENT:
