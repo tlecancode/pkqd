@@ -10,11 +10,11 @@ export default class Q extends React.Component {
 
   render() {
     const bgColor = this.props.config.bg_color || '#2c3e50'
-    const {q: {department, name, entryposition}} = this.props
+    const {q: {department, name, entryposition, q}} = this.props
     return (
       <div className={styles.qPage}>
         <QHeader bgColor={bgColor} department={department} name={name} entryposition={entryposition}/>
-        <QBody bgColor={bgColor}/>
+        <QBody bgColor={bgColor} q={q}/>
       </div>
     )
   }
@@ -66,26 +66,24 @@ export const Position = ({position}) => {
 export const QBody = ({q, bgColor}) => {
   return (
     <div className={styles.qBody}>
-      <div className={styles.qList}>
-        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
-        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
-        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
-        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
-        <QItem qNumber={30} qName={'นายสมชาย สายชม'} bgColor={bgColor}/>
-      </div>
+      <ul className={`list-unstyled ${styles.qList}`}>
+        {q.map((q, index) => (
+          <QItem qNumber={q.oqueue} qName={q.patient_name} bgColor={bgColor} key={index}/>
+        ))}
+      </ul>
     </div>
   )
 }
 
 export const QItem = ({qNumber, qName, bgColor}) => {
   return (
-    <div className={styles.qItem} style={{color: bgColor}}>
+    <li className={styles.qItem} style={{color: bgColor}}>
       <div style={{backgroundColor: bgColor}} className={styles.qNumber}>{qNumber}</div>
       <div className={styles.qNameContainer}>
-        <ReactFitText compressor={1} maxFontSize={60}>
+        <ReactFitText compressor={1} maxFontSize={40}>
           <h4 className={styles.qName}>{qName}</h4>
         </ReactFitText>
       </div>
-    </div>
+    </li>
   )
 }

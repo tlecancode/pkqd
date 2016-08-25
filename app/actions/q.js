@@ -1,6 +1,7 @@
 import mysql from 'mysql'
 
 export const GET_DEPARTMENT = 'GET_DEPARTMENT'
+export const FETCH_Q = 'FETCH_Q'
 
 
 export function initQ() {
@@ -13,6 +14,10 @@ export function initQ() {
       database: config.db_name
     })
     dispatch(getDepartment(pool, config))
+    dispatch(fetchQ(pool, config))
+    setInterval(() => {
+      dispatch(fetchQ(pool, config))
+    }, 5000)
   }
 }
 
@@ -23,6 +28,20 @@ export function getDepartment(pool, config) {
         dispatch({
           type: GET_DEPARTMENT,
           payload: rows[0]
+        })
+        connection.release()
+      })
+    })
+  }
+}
+
+export function fetchQ(pool, config) {
+  return (dispatch, getState) => {
+    pool.getConnection((err, connection) => {
+      connection.query(`SELECT ovst.oqueue, CONCAT(patient.pname, patient.fname, ' ', patient.lname) as patient_name FROM ovst INNER JOIN patient ON ovst.hn = patient.hn WHERE ovst.cur_dep = ${parseInt(config.dep_id)} ORDER BY cur_dep_time DESC LIMIT 5`, (err, rows) => {
+        dispatch({
+          type: FETCH_Q,
+          payload: rows
         })
         connection.release()
       })

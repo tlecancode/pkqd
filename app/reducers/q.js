@@ -1,5 +1,6 @@
 import {
-  GET_DEPARTMENT
+  GET_DEPARTMENT,
+  FETCH_Q
 } from '../actions/q'
 
 export default function q(state = {
@@ -13,6 +14,11 @@ export default function q(state = {
       return {
         ...state,
         ...action.payload
+      }
+    case FETCH_Q:
+      return {
+        ...state,
+        q: action.payload
       }
     default:
       return state;
