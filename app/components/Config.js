@@ -18,31 +18,31 @@ class ConfigFormComponent extends Component {
       <div className="col-xs-4 col-xs-offset-4">
         <form onSubmit={handleSubmit}>
           <div className="form-group">
-            <label>dp_ip</label>
+            <label>Database IP</label>
             <input type="text" className="form-control" {...db_ip}/>
           </div>
           <div className="form-group">
-            <label>dp_port</label>
+            <label>Database Port</label>
             <input type="text" className="form-control" {...db_port}/>
           </div>
           <div className="form-group">
-            <label>dp_user</label>
+            <label>Database User</label>
             <input type="text" className="form-control" {...db_user}/>
           </div>
           <div className="form-group">
-            <label>dp_pwd</label>
+            <label>Database Password</label>
             <input type="text" className="form-control" {...db_pwd}/>
           </div>
           <div className="form-group">
-            <label>dp_name</label>
+            <label>Database Name</label>
             <input type="text" className="form-control" {...db_name}/>
           </div>
           <div className="form-group">
-            <label>dep_id</label>
+            <label>รหัสห้อง</label>
             <input type="text" className="form-control" {...dep_id}/>
           </div>
           <div className="form-group">
-            <label>bg_color</label>
+            <label>สีพื้นหลัง</label>
             <input type="color" className="form-control" {...bg_color}/>
           </div>
           <div className="text-center">
@@ -63,21 +63,13 @@ class ConfigFormComponent extends Component {
     )
   }
 }
-import {settings} from '../actions/config'
 export const ConfigForm = reduxForm({
   form: 'config',
   fields
 }, (state) => {
-  const config = settings.get()
   return {
     initialValues: {
-      db_ip: config.config__db_ip,
-      db_port: config.config__db_port,
-      db_user: config.config__db_user,
-      db_pwd: config.config__db_pwd,
-      db_name: config.config__db_name,
-      dep_id: config.config__dep_id,
-      bg_color: config.config__bg_color || '#000000'
+      ...state.config
     }
   }
 })(ConfigFormComponent)

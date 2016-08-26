@@ -1,7 +1,5 @@
 import mysql from 'mysql'
-import ElectronSettings from 'electron-settings'
-
-export const settings = new ElectronSettings()
+import storage from 'electron-json-storage'
 
 export const GET_CONFIG = 'GET_CONFIG'
 export const SET_CONFIG = 'SET_CONFIG'
@@ -10,29 +8,28 @@ export const SAVE_CONFIG = 'SAVE_CONFIG'
 
 export function getConfig() {
   return (dispatch) => {
-    const config = settings.get()
-    dispatch(setConfig({
-      db_ip: config.config__db_ip,
-      db_port: config.config__db_port,
-      db_user: config.config__db_user,
-      db_pwd: config.config__db_pwd,
-      db_name: config.config__db_name,
-      dep_id: config.config__dep_id,
-      bg_color: config.config__bg_color
-    }))
+    storage.has('config', function(error, hasKey) {
+      if (hasKey) {
+        storage.get('config', function(error, data) {
+          dispatch(setConfig(data))
+        });
+      }
+    });
   }
 }
 
 export function saveConfig() {
   return (dispatch, getState) => {
     const config = getState().form.config
-    settings.set('config__db_ip', config.db_ip.value)
-    settings.set('config__db_port', config.db_port.value)
-    settings.set('config__db_user', config.db_user.value)
-    settings.set('config__db_pwd', config.db_pwd.value)
-    settings.set('config__db_name', config.db_name.value)
-    settings.set('config__dep_id', config.dep_id.value)
-    settings.set('config__bg_color', config.bg_color.value)
+    storage.set('config', {
+      db_ip: config.db_ip.value,
+      db_port: config.db_port.value,
+      db_user: config.db_user.value,
+      db_pwd: config.db_pwd.value,
+      db_name: config.db_name.value,
+      dep_id: config.dep_id.value,
+      bg_color: config.bg_color.value
+    })
     alert('บันทึกสำเร็จ')
     dispatch(getConfig())
     return dispatch({

@@ -10,12 +10,12 @@ export const LoginForm = ({config}) => {
         <div>
           <pre>
             <ul className="list-unstyled">
-              <li><strong>IP: </strong>{config.db_ip}</li>
-              <li><strong>Port: </strong>{config.db_port}</li>
-              <li><strong>DB Name: </strong>{config.db_name}</li>
-              <li><strong>Username: </strong>{config.db_user}</li>
-              <li><strong>Password: </strong>{config.db_pwd.length ? '******': 'No'}</li>
-              <li><strong>รหัสเครื่อง: </strong>{config.dep_id}</li>
+              <li><strong>IP: </strong>{config.db_ip ? config.db_ip : ''}</li>
+              <li><strong>Port: </strong>{config.db_port ? config.db_port : ''}</li>
+              <li><strong>DB Name: </strong>{config.db_name ? config.db_name : ''}</li>
+              <li><strong>Username: </strong>{config.db_user ? config.db_user : ''}</li>
+              <li><strong>Password: </strong>{config.db_pwd && config.db_pwd.length ? '******': ''}</li>
+              <li><strong>รหัสเครื่อง: </strong>{config.dep_id ? config.dep_id : ''}</li>
               <li><strong>พื้นหลัง: </strong> <span style={{backgroundColor: config.bg_color, color: '#fff'}}>{config.bg_color}</span></li>
               <li><Link to="config">ตั้งค่า</Link></li>
             </ul>

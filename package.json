@@ -98,6 +98,7 @@
   "dependencies": {
     "css-modules-require-hook": "^4.0.2",
     "electron-debug": "^1.0.1",
+    "electron-json-storage": "^2.0.0",
     "electron-settings": "^1.1.1",
     "font-awesome": "^4.6.3",
     "mysql": "github:mysqljs/mysql",
