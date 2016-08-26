@@ -33,9 +33,7 @@ export const QHeader = ({department, name, entryposition, bgColor}) => {
 export const DepartmentName = ({department}) => {
   if (department) {
     return (
-      <ReactFitText compressor={1} maxFontSize={100} minFontSize={80}>
-        <h1>{department}</h1>
-      </ReactFitText>
+      <h1 style={{fontSize: '100px'}}>{department.replace('PK2-', '')}</h1>
     )
   }
   return <div></div>
@@ -44,9 +42,7 @@ export const DepartmentName = ({department}) => {
 export const UserName = ({name}) => {
   if (name) {
     return (
-      <ReactFitText compressor={2.5} maxFontSize={45} minFontSize={35}>
-        <h2>{name}</h2>
-      </ReactFitText>
+      <h2 style={{fontSize: '45px'}}>{name}</h2>
     )
   }
   return <div></div>
@@ -55,9 +51,7 @@ export const UserName = ({name}) => {
 export const Position = ({position}) => {
   if (position) {
     return (
-      <ReactFitText compressor={2.5} maxFontSize={45} minFontSize={35}>
-        <h2>{position}</h2>
-      </ReactFitText>
+      <h2 style={{fontSize: '35px'}}>{position}</h2>
     )
   }
   return <div></div>
@@ -80,9 +74,7 @@ export const QItem = ({qNumber, qName, bgColor}) => {
     <li className={styles.qItem} style={{color: bgColor}}>
       <div style={{backgroundColor: bgColor}} className={styles.qNumber}>{qNumber}</div>
       <div className={styles.qNameContainer}>
-        <ReactFitText compressor={1} maxFontSize={40}>
-          <h4 className={styles.qName}>{qName}</h4>
-        </ReactFitText>
+        <h4 className={styles.qName}>{qName}</h4>
       </div>
     </li>
   )

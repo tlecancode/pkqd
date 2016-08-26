@@ -1,13 +1,15 @@
 .qPage {
-  display: flex;
   width: 100%;
   height: 100%;
-  flex-direction: column;
+  position: relative;
+  overflow: auto;
+  background: #ECF0F1;
 }
 
 .qHeader {
-  padding: 20px;
-  flex: 1;
+  height: 30%;
+  padding-left: 20px;
+  padding-right: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -23,41 +25,47 @@
 }
 
 .qBody {
-  background: #ECF0F1;
-  flex: 3;
+  height: 70%;
 }
 
 .qList {
   height: 100%;
+  width: 100%;
 }
 
 .qItem {
-  margin: 48px 48px;
-  display: flex;
+  margin: 30px;
   -webkit-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
   -moz-box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
   box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.34);
   background: #fff;
-  align-items: stretch;
 }
 
 .qNumber {
+  text-align: center;
   padding: 0 20px;
-  font-size: 70px;
+  font-size: 140px;
   color: #fff;
   font-weight: bold;
-  display: flex;
-  align-items: center;
+  min-width: 240px;
+  line-height: 1.4;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .qNameContainer {
   padding: 0 30px;
   font-size: 70px;
-  flex: 1;
-  display: flex;
-  align-items: center;
+  display: table-cell;
+  vertical-align: middle;
 }
 
 .qName {
-  flex: 1;
+  display: block;
+  font-size: 50px;
+  line-height: 2;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 540px;
 }
