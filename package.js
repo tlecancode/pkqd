@@ -20,6 +20,7 @@ const shouldUseAsar = argv.asar || argv.a || false;
 const shouldBuildAll = argv.all || false;
 
 
+
 const DEFAULT_OPTS = {
   dir: './',
   name: appName,
@@ -77,8 +78,12 @@ function startPack() {
     .then(paths => {
       if (shouldBuildAll) {
         // build for all platforms
-        const archs = ['ia32', 'x64'];
-        const platforms = ['linux', 'win32', 'darwin'];
+        //const archs = ['ia32', 'x64'];
+        //const platforms = ['linux', 'win32', 'darwin'];
+
+        // build only windows
+        const archs = ['x64'];
+        const platforms = ['win32'];
 
         platforms.forEach(plat => {
           archs.forEach(arch => {

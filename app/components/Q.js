@@ -24,8 +24,6 @@ export const QHeader = ({department, name, entryposition, bgColor}) => {
   return (
     <div style={{backgroundColor: bgColor}} className={styles.qHeader}>
       <DepartmentName department={department}/>
-      <UserName name={name}/>
-      <Position position={entryposition}/>
     </div>
   )
 }
