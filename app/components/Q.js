@@ -1,6 +1,5 @@
 import React from 'react'
 import styles from './Q.css';
-import ReactFitText from 'react-fittext'
 
 export default class Q extends React.Component {
   componentDidMount() {

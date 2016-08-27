@@ -78,11 +78,8 @@ function startPack() {
     .then(paths => {
       if (shouldBuildAll) {
         // build for all platforms
-        //const archs = ['ia32', 'x64'];
+        const archs = ['ia32', 'x64'];
         //const platforms = ['linux', 'win32', 'darwin'];
-
-        // build only windows
-        const archs = ['x64'];
         const platforms = ['win32'];
 
         platforms.forEach(plat => {
